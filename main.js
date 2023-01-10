@@ -10,7 +10,7 @@ const GiftIdeas = () => {
   
   const handleSubmit = event => {
     event.preventDefault();
-    fetch(`index?age=${age}&gender=${gender}&interests=${interests}&relationship=${relationship}&occasion=${occasion}`)
+    fetch(`https://stgk10.github.io/bdaygiftfinder/?age=${age}&gender=${gender}&interests=${interests}&relationship=${relationship}&occasion=${occasion}`)
       .then(response => response.text())
       .then(giftIdeas => {
         setGiftIdeas(giftIdeas);

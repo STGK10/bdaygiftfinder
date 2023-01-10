@@ -1,7 +1,7 @@
 import openai
 from django.shortcuts import render
-#from django.urls import path
-#from . import views
+from django.urls import path
+from . import views
 
 import openai
 openai.api_key = "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"
@@ -23,6 +23,7 @@ def generate_gift_ideas(request):
     temperature=0.5,
   )
   message = completions.choices[0].text
-  #urlpatterns = [path('gift-ideas/', views.generate_gift_ideas, name='gift_ideas'),]
+  urlpatterns = [path('https://stgk10.github.io/bdaygiftfinder/', views.generate_gift_ideas, name='gift_ideas'),]
+  gift_ideas = generate_gift_ideas(age, gender, interests, relationship, occasion)
   return render(request, 'index.html', {'gift_ideas': message})
 
